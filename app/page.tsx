@@ -3,6 +3,7 @@
 /* eslint-disable react-hooks/refs, react-hooks/set-state-in-effect */
 import {useEffect,useRef,useState,type CSSProperties} from 'react';
 import {ShieldCheck,ArrowRight,ScanLine,BookOpen,Gamepad2,Pause,Volume2,VolumeX,Check,Target,Zap,Footprints,Hand,Home,Download,Share2,Smartphone} from 'lucide-react';
+import {Capacitor} from '@capacitor/core';
 import {Tabs,TabsList,TabsTrigger,TabsContent} from '@/components/ui/tabs';
 import {Dialog,DialogContent,DialogTitle,DialogDescription} from '@/components/ui/dialog';
 import {Select,SelectTrigger,SelectValue,SelectContent,SelectItem} from '@/components/ui/select';
@@ -11,6 +12,7 @@ import {HEROES,HAZARDS,CHAPTERS,GEAR,createGame,update,chooseUpgrade,score,dista
 import {render,camera,type Assets} from '@/lib/game/render';
 const stages=['识别入门','组合挑战','综合处置'];
 const basePath=process.env.NEXT_PUBLIC_BASE_PATH??'';
+const isNative=Capacitor.isNativePlatform();
 const initialInput=():Input=>({x:0,y:0,fire:false,aim:null,interact:false,skill:false});
 type InstallPromptEvent=Event&{prompt:()=>Promise<void>;userChoice:Promise<{outcome:'accepted'|'dismissed'}>};
 function Portrait({index,className=''}:{index:number,className?:string}){return <div aria-hidden="true" className={'portrait '+className} style={{backgroundImage:`url(${basePath}/assets/heroes.webp)`,backgroundPosition:`${index%2*100}% ${Math.floor(index/2)*100}%`}}/>}
@@ -22,7 +24,7 @@ export default function Page(){
  const game=useRef<State|null>(null),canvas=useRef<HTMLCanvasElement>(null),arena=useRef<HTMLDivElement>(null),assets=useRef<Assets|null>(null),input=useRef(initialInput()),keys=useRef(new Set<string>()),size=useRef({w:1000,h:600}),pausedRef=useRef(false),audioRef=useRef<AudioContext|null>(null),soundRef=useRef(false),joy=useRef({x:0,y:0,id:-1}),joyRef=useRef<HTMLDivElement>(null),saved=useRef(false),route=useRef<{x:number,y:number}[]>([]),interactLatch=useRef(false),pressAt=useRef(0);
  const [stick,setStick]=useState({x:0,y:0});
  useEffect(()=>{try{const parsed=JSON.parse(localStorage.getItem('hse-frontier-records-v1')||'{}');if(parsed&&typeof parsed==='object'&&!Array.isArray(parsed))setRecords(parsed);}catch{}let alive=true;const imgs={} as Assets;Promise.all((['heroes','hazards','floor'] as const).map(k=>new Promise<void>((ok,no)=>{const img=new Image();img.onload=()=>{imgs[k]=img;ok();};img.onerror=no;img.src=basePath+'/assets/'+k+'.webp';}))).then(()=>{if(alive){assets.current=imgs;setAssetsReady(true);}}).catch(()=>{if(alive)setAssetError(true);});return()=>{alive=false};},[]);
- useEffect(()=>{if('serviceWorker'in navigator)void navigator.serviceWorker.register(basePath+'/sw.js',{scope:(basePath||'')+'/'}).catch(()=>{});const standalone=window.matchMedia('(display-mode: standalone)').matches||('standalone'in navigator&&(navigator as Navigator&{standalone?:boolean}).standalone===true);setInstalled(standalone);const before=(event:Event)=>{event.preventDefault();setInstallPrompt(event as InstallPromptEvent);};const done=()=>{setInstalled(true);setInstallPrompt(null);};window.addEventListener('beforeinstallprompt',before);window.addEventListener('appinstalled',done);return()=>{window.removeEventListener('beforeinstallprompt',before);window.removeEventListener('appinstalled',done);};},[]);
+ useEffect(()=>{if(!isNative&&'serviceWorker'in navigator)void navigator.serviceWorker.register(basePath+'/sw.js',{scope:(basePath||'')+'/'}).catch(()=>{});const standalone=isNative||window.matchMedia('(display-mode: standalone)').matches||('standalone'in navigator&&(navigator as Navigator&{standalone?:boolean}).standalone===true);setInstalled(standalone);const before=(event:Event)=>{event.preventDefault();setInstallPrompt(event as InstallPromptEvent);};const done=()=>{setInstalled(true);setInstallPrompt(null);};window.addEventListener('beforeinstallprompt',before);window.addEventListener('appinstalled',done);return()=>{window.removeEventListener('beforeinstallprompt',before);window.removeEventListener('appinstalled',done);};},[]);
  async function requestInstall(){if(installPrompt){await installPrompt.prompt();const result=await installPrompt.userChoice;if(result.outcome==='accepted')setInstalled(true);setInstallPrompt(null);return;}setInstallHelp(true);}
  useEffect(()=>{pausedRef.current=paused||help;interactLatch.current=false;input.current=initialInput();keys.current.clear();joy.current.id=-1;setStick({x:0,y:0});},[paused,help]);
  useEffect(()=>{soundRef.current=sound;},[sound]);

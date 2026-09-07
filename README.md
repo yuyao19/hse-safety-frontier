@@ -44,6 +44,19 @@ npm run build
 
 `https://yuyao19.github.io/hse-safety-frontier/`
 
+## Android APK
+
+仓库已包含 Capacitor Android 工程。`Build Android APK` 工作流会将静态游戏资源打入应用内部，生成可离线安装的体验签名版 APK。
+
+```bash
+CAPACITOR_BUILD=true npm run build
+npm run android:sync
+cd android
+./gradlew assembleDebug
+```
+
+体验签名版适合内部试玩和直接转发，不作为应用商店正式发布版本。正式发布前应另行创建并妥善保管 release 签名密钥，且不得将密钥或密码提交到公开仓库。
+
 ## 已实现内容
 
 - 四名可选角色及不同主动技能。

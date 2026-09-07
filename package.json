@@ -10,15 +10,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next dev",
-    "test": "npm run test:logic && npm run test:pwa && npm run test:playthrough && npm run build && npm run test:static",
+    "test": "npm run test:logic && npm run test:pwa && npm run test:playthrough && npm run build && npm run test:static && npm run test:android",
     "test:logic": "node --experimental-strip-types --test tests/game.test.mjs",
     "test:pwa": "node --test tests/pwa.test.mjs",
     "test:playthrough": "node --experimental-strip-types tests/playthrough.mjs",
     "test:static": "node --test tests/static-export.test.mjs",
+    "test:android": "node --test tests/android.test.mjs",
+    "android:sync": "cap sync android",
+    "android:open": "cap open android",
     "lint": "eslint app/page.tsx app/layout.tsx lib/game components/ui/button.tsx components/ui/dialog.tsx components/ui/progress.tsx components/ui/select.tsx components/ui/tabs.tsx next.config.ts",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
   },
   "dependencies": {
+    "@capacitor/android": "8.5.1",
+    "@capacitor/core": "8.5.1",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "lucide-react": "^1.31.0",
@@ -29,6 +34,7 @@
     "tailwind-merge": "3.6.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "8.5.1",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
