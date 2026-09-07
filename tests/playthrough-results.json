@@ -1,0 +1,324 @@
+{
+  "total": 288,
+  "won": 261,
+  "byDifficulty": [
+    {
+      "difficulty": 0,
+      "won": 96,
+      "total": 96
+    },
+    {
+      "difficulty": 1,
+      "won": 96,
+      "total": 96
+    },
+    {
+      "difficulty": 2,
+      "won": 69,
+      "total": 96
+    }
+  ],
+  "failures": [
+    {
+      "difficulty": 2,
+      "hero": 0,
+      "chapter": 0,
+      "stage": 2,
+      "status": "lost",
+      "time": 21,
+      "hp": 0,
+      "step": 4,
+      "kills": 7
+    },
+    {
+      "difficulty": 2,
+      "hero": 0,
+      "chapter": 2,
+      "stage": 2,
+      "status": "lost",
+      "time": 20,
+      "hp": 0,
+      "step": 4,
+      "kills": 8
+    },
+    {
+      "difficulty": 2,
+      "hero": 0,
+      "chapter": 4,
+      "stage": 2,
+      "status": "lost",
+      "time": 21,
+      "hp": 0,
+      "step": 4,
+      "kills": 8
+    },
+    {
+      "difficulty": 2,
+      "hero": 0,
+      "chapter": 6,
+      "stage": 2,
+      "status": "lost",
+      "time": 20,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    },
+    {
+      "difficulty": 2,
+      "hero": 0,
+      "chapter": 7,
+      "stage": 2,
+      "status": "lost",
+      "time": 20,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 0,
+      "stage": 2,
+      "status": "lost",
+      "time": 18,
+      "hp": 0,
+      "step": 4,
+      "kills": 5
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 1,
+      "stage": 1,
+      "status": "lost",
+      "time": 17,
+      "hp": 0,
+      "step": 4,
+      "kills": 8
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 1,
+      "stage": 2,
+      "status": "lost",
+      "time": 17,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 2,
+      "stage": 2,
+      "status": "lost",
+      "time": 17,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 3,
+      "stage": 2,
+      "status": "lost",
+      "time": 18,
+      "hp": 0,
+      "step": 4,
+      "kills": 4
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 4,
+      "stage": 1,
+      "status": "lost",
+      "time": 17,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 4,
+      "stage": 2,
+      "status": "lost",
+      "time": 17,
+      "hp": 0,
+      "step": 4,
+      "kills": 4
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 5,
+      "stage": 2,
+      "status": "lost",
+      "time": 18,
+      "hp": 0,
+      "step": 4,
+      "kills": 4
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 6,
+      "stage": 2,
+      "status": "lost",
+      "time": 17,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 7,
+      "stage": 1,
+      "status": "lost",
+      "time": 17,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    },
+    {
+      "difficulty": 2,
+      "hero": 2,
+      "chapter": 7,
+      "stage": 2,
+      "status": "lost",
+      "time": 18,
+      "hp": 0,
+      "step": 4,
+      "kills": 3
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 1,
+      "stage": 1,
+      "status": "lost",
+      "time": 15,
+      "hp": 0,
+      "step": 3,
+      "kills": 7
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 1,
+      "stage": 2,
+      "status": "lost",
+      "time": 20,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 2,
+      "stage": 2,
+      "status": "lost",
+      "time": 22,
+      "hp": 0,
+      "step": 4,
+      "kills": 8
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 3,
+      "stage": 1,
+      "status": "lost",
+      "time": 15,
+      "hp": 0,
+      "step": 3,
+      "kills": 7
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 3,
+      "stage": 2,
+      "status": "lost",
+      "time": 15,
+      "hp": 0,
+      "step": 3,
+      "kills": 5
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 5,
+      "stage": 1,
+      "status": "lost",
+      "time": 19,
+      "hp": 0,
+      "step": 4,
+      "kills": 8
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 5,
+      "stage": 2,
+      "status": "lost",
+      "time": 19,
+      "hp": 0,
+      "step": 4,
+      "kills": 7
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 6,
+      "stage": 1,
+      "status": "lost",
+      "time": 22,
+      "hp": 0,
+      "step": 4,
+      "kills": 9
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 6,
+      "stage": 2,
+      "status": "lost",
+      "time": 20,
+      "hp": 0,
+      "step": 4,
+      "kills": 7
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 7,
+      "stage": 1,
+      "status": "lost",
+      "time": 20,
+      "hp": 0,
+      "step": 4,
+      "kills": 7
+    },
+    {
+      "difficulty": 2,
+      "hero": 3,
+      "chapter": 7,
+      "stage": 2,
+      "status": "lost",
+      "time": 19,
+      "hp": 0,
+      "step": 4,
+      "kills": 6
+    }
+  ],
+  "timing": {
+    "min": 15,
+    "max": 29
+  }
+}
