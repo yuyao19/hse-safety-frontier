@@ -1,4 +1,4 @@
-const CACHE_NAME = "hse-safety-frontier-v1";
+const CACHE_NAME = "hse-risk-link-v3";
 const CORE_ASSETS = [
   "./",
   "./manifest.webmanifest",

@@ -7,7 +7,7 @@ test("PWA manifest is installable and keeps URLs repository-relative", async () 
   assert.equal(manifest.display, "standalone");
   assert.equal(manifest.start_url, "./");
   assert.equal(manifest.scope, "./");
-  assert.equal(manifest.orientation, "landscape");
+  assert.equal(manifest.orientation, "any");
   assert.ok(manifest.icons.some((icon) => icon.sizes === "192x192"));
   assert.ok(manifest.icons.some((icon) => icon.sizes === "512x512"));
   for (const icon of manifest.icons) assert.match(icon.src, /^\.\//);

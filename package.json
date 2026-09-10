@@ -1,6 +1,6 @@
 {
   "name": "hse-safety-frontier",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next dev",
     "test": "npm run test:logic && npm run test:pwa && npm run test:playthrough && npm run build && npm run test:static && npm run test:android",
-    "test:logic": "node --experimental-strip-types --test tests/game.test.mjs",
+    "test:logic": "node --experimental-strip-types --test tests/link-game.test.mjs",
     "test:pwa": "node --test tests/pwa.test.mjs",
     "test:playthrough": "node --experimental-strip-types tests/playthrough.mjs",
     "test:static": "node --test tests/static-export.test.mjs",

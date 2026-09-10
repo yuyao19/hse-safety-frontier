@@ -63,11 +63,11 @@ jobs:
           "$APKSIGNER" verify --verbose --print-certs android/app/build/outputs/apk/debug/app-debug.apk
 
       - name: Name APK
-        run: cp android/app/build/outputs/apk/debug/app-debug.apk HSE-Safety-Frontier-v2.0.0-android-test.apk
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk HSE-Risk-Link-v3.0.0-android-test.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: HSE-Safety-Frontier-Android-APK
-          path: HSE-Safety-Frontier-v2.0.0-android-test.apk
+          name: HSE-Risk-Link-Android-APK
+          path: HSE-Risk-Link-v3.0.0-android-test.apk
           if-no-files-found: error

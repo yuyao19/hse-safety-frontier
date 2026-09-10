@@ -20,8 +20,6 @@ test("native web bundle is complete and does not contain the GitHub Pages prefix
   for (const path of [
     `${root}/index.html`,
     `${root}/assets/heroes.webp`,
-    `${root}/assets/hazards.webp`,
-    `${root}/assets/floor.webp`,
   ]) {
     assert.ok((await stat(path)).size > 0, `${path} should exist and be non-empty`);
   }
@@ -34,4 +32,5 @@ test("APK workflow builds and verifies an installable artifact", async () => {
   assert.match(workflow, /\.\/gradlew assembleDebug/);
   assert.match(workflow, /apksigner/);
   assert.match(workflow, /actions\/upload-artifact@v4/);
+  assert.match(workflow, /HSE-Risk-Link-v3\.0\.0-android-test\.apk/);
 });
