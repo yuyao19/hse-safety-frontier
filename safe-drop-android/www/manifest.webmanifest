@@ -1,0 +1,10 @@
+{
+  "name": "安全落点 · FORUS标志挑战",
+  "short_name": "安全落点",
+  "description": "移动端安全标志落块消除游戏",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#06110c",
+  "theme_color": "#159447",
+  "orientation": "portrait"
+}

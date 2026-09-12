@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#159447">
+  <meta name="description" content="安全落点——FORUS安全标志落块挑战">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>安全落点 · FORUS标志挑战</title>
+</head>
+<body>
+  <main id="app">
+    <section id="home" class="screen active" aria-labelledby="game-title">
+      <div class="brand-card">
+        <img class="forus-logo" src="forus-logo.jpg" alt="FORUS">
+        <div class="brand-rule"></div>
+        <p>安全标志落块挑战</p>
+      </div>
+      <header class="hero">
+        <span class="eyebrow">FORUS · SAFETY SIGNS</span>
+        <h1 id="game-title">安全落点</h1>
+        <p>摆好每一块，认清每个标志</p>
+      </header>
+      <div class="home-panel">
+        <div class="section-title"><span>选择现场</span><small id="progressText">已解锁 1 / 18</small></div>
+        <div id="levelGrid" class="level-grid"></div>
+        <div class="section-title compact"><span>选择引导员</span><small>只改变提示风格</small></div>
+        <div id="mentorGrid" class="mentor-grid"></div>
+        <button id="startBtn" class="primary-btn">进入现场</button>
+        <button id="guideBtn" class="text-btn">玩法与标志说明</button>
+      </div>
+      <p class="standard-note">内容依据 GB 2894—2025 分类设计。游戏图形为小尺寸识别化简表现。</p>
+    </section>
+
+    <section id="game" class="screen" aria-label="游戏棋盘">
+      <header class="game-header">
+        <button id="backBtn" class="icon-btn" aria-label="返回">‹</button>
+        <div class="scene-heading"><small id="stageNo">第1关</small><strong id="sceneName">综合施工</strong></div>
+        <button id="pauseBtn" class="icon-btn" aria-label="暂停">Ⅱ</button>
+      </header>
+      <div class="mission-card">
+        <div class="mission-icon" id="missionIcon">⚠</div>
+        <div><small>本关任务</small><strong id="missionName">收集警告标志</strong></div>
+        <div class="mission-count"><b id="missionDone">0</b><span>/</span><span id="missionTotal">8</span></div>
+      </div>
+      <div class="game-layout">
+        <div class="board-wrap">
+          <div id="board" class="board" role="grid" aria-label="8列16行落块棋盘"></div>
+          <div id="toast" class="toast" aria-live="polite"></div>
+        </div>
+        <aside class="side-panel">
+          <div class="score-box"><small>得分</small><strong id="score">0</strong></div>
+          <div class="score-box"><small>消行</small><strong id="lines">0</strong></div>
+          <div class="next-box"><small>下一个</small><div id="nextPiece" class="next-piece"></div></div>
+          <div class="mentor-tip"><span id="mentorAvatar">🦉</span><p id="mentorTip">先看落点，再做判断。</p></div>
+        </aside>
+      </div>
+      <div class="controls" aria-label="游戏控制">
+        <button data-action="left" aria-label="左移">←</button>
+        <button data-action="rotate" aria-label="旋转">↻</button>
+        <button data-action="right" aria-label="右移">→</button>
+        <button data-action="down" aria-label="加速下降">↓</button>
+        <button data-action="drop" class="drop-btn" aria-label="快速落下">落下</button>
+      </div>
+      <div class="legend-mini">
+        <span class="prohibit">禁止</span><span class="warning">警告</span><span class="mandatory">指令</span><span class="safe">提示</span>
+      </div>
+    </section>
+
+    <section id="result" class="screen result-screen" aria-labelledby="resultTitle">
+      <img class="result-logo" src="forus-logo.jpg" alt="FORUS">
+      <div id="resultBadge" class="result-badge">安全落点</div>
+      <h2 id="resultTitle">任务完成</h2>
+      <p id="resultMessage">你完成了本关的标志识别任务。</p>
+      <div class="result-score"><small>本局得分</small><strong id="finalScore">0</strong></div>
+      <div class="result-stats"><span>消行 <b id="finalLines">0</b></span><span>识别 <b id="finalSigns">0</b></span><span>最高连击 <b id="finalCombo">0</b></span></div>
+      <div id="knowledgeCard" class="knowledge-card"></div>
+      <button id="nextBtn" class="primary-btn">下一关</button>
+      <button id="homeBtn" class="text-btn">返回首页</button>
+      <p class="control-note">安全标志用于警示、指令和引导，不能替代隔离、防护、监护等风险控制措施。</p>
+    </section>
+  </main>
+
+  <dialog id="guideDialog">
+    <div class="dialog-head"><strong>怎么玩</strong><button id="closeGuide" aria-label="关闭">×</button></div>
+    <ol>
+      <li>移动、旋转并落下方块，填满一整行即可消除。</li>
+      <li>消除行内包含任务标志，可推进本关目标。</li>
+      <li>连续消行获得连击加分；堆到顶部则任务失败。</li>
+      <li>方块可以旋转，安全标志始终保持正向。</li>
+    </ol>
+    <div class="sign-guide">
+      <div><span class="sign-shape prohibit">禁</span><b>禁止标志</b><small>禁止不安全行为</small></div>
+      <div><span class="sign-shape warning">警</span><b>警告标志</b><small>提醒注意危险</small></div>
+      <div><span class="sign-shape mandatory">令</span><b>指令标志</b><small>必须遵守的要求</small></div>
+      <div><span class="sign-shape safe">示</span><b>提示标志</b><small>安全设施与方向</small></div>
+    </div>
+    <p>游戏图形为识别化简表现，现场正式设置应使用现行标准完整图样。</p>
+  </dialog>
+
+  <dialog id="pauseDialog">
+    <strong>已暂停</strong>
+    <button id="resumeBtn" class="primary-btn">继续游戏</button>
+    <button id="quitBtn" class="text-btn">返回首页</button>
+  </dialog>
+  <script src="game.js"></script>
+</body>
+</html>
