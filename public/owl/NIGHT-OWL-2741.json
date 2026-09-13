@@ -1,0 +1,11 @@
+{
+  "version": "OWL-CAPSULE-2",
+  "kdf": "PBKDF2-SHA256",
+  "iterations": 200000,
+  "alg": "AES-256-GCM",
+  "salt_b64u": "QY9M5FsqGQaQMqWrBq3UnA",
+  "nonce_b64u": "4azO4efWa7Au_1vV",
+  "ciphertext_b64u": "5FOz5ULbJpc9pzJIHMJcMa2tsGT7yTpKFSAZ_RV4Yzn7L_PPwIQ3Kdm7gwbaTdT1AhzvFw5R0PWaOVaDBM_ixryYX64Gx9h9GcBAEgbyM6wlv8RnO4ZlkYD-F0Pbq8c7HLyXyw0L0rg3fyaf5oRixjFJwx5WNNYu4pN0QRUa7EPCgEArwg",
+  "encoding": "utf-8",
+  "note": "Public ciphertext only. The passphrase is not stored here."
+}
