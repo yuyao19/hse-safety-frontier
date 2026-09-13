@@ -1,0 +1,8 @@
+{
+  "version": "OWL-CAPSULE-1",
+  "alg": "AES-256-GCM",
+  "nonce_b64u": "mdatGrHfgYpx1Xo-",
+  "ciphertext_b64u": "2UAzqedJXyEhm4Swttf5faRWYPvmEqRZekO4VtPx6xtkYIk3pCAF0CjJ2jMRBgRMAmac47zvCltU3bGZvwsJzzwSaY9VT8U93aGarMLRLh0aIBMz_42NMPb8V0-6XqIsfP386jTYrCcoAVlL3zpDb3BC1JWbRQtXDYdP9k5CwHhcfqXbzw",
+  "encoding": "utf-8",
+  "note": "Public ciphertext only. Decryption key is never stored in this file."
+}
